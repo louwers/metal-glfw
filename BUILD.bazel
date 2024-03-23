@@ -1,0 +1,23 @@
+objc_library(
+  name = "glfw-metal-example-lib",
+  srcs = [
+    "glfw-metal-example.m" 
+  ],
+  deps = [
+    "@glfw"
+  ],
+  linkopts = [
+    "-lglfw3",
+    "-framework Cocoa",
+    "-framework IOKit",
+    "-framework Metal",
+    "-framework QuartzCore"
+  ]
+)
+
+cc_binary(
+  name = "glfw-metal-example",
+  deps = [
+    "glfw-metal-example-lib"
+  ]
+)
